@@ -10,7 +10,7 @@
     <title>P-Ticket</title>
 </head>
 <body>
-    <header class="max-w-[1170px]  m-auto">
+    <header id="header" class="max-w-[1170px]  m-auto">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -82,7 +82,7 @@
 
 
 
-    <main  class="max-w-[1170px]  m-auto">
+    <main id="main" class="max-w-[1170px]  m-auto">
         <section class="offer-Section flex justify-center flex-col gap-8">
             <h1 class="text-center text-3xl font-bold pt-16 pb-5">Best offers for you</h1>
             <div class="flex justify-evenly items-center pb-10">
@@ -269,22 +269,16 @@
                                     <p>Class</p>
                                     <p>Price</p>
                             </div>
-                            <div id="" class="space-y-2">
-                                <div class="flex justify-between">
-                                    <p>C2</p>
-                                    <p>Economy</p>
-                                    <p>550</p>
+                            <div class="space-y-2">
+                                <div id="displaySeat" >
+                                    
                                 </div>
-                                <div class="flex justify-between">
-                                    <p>C2</p>
-                                    <p>Economy</p>
-                                    <p>550</p>
-                                </div>
+                            
                             </div>
                             <hr>
                             <div class="flex justify-between my-2">
                                 <p class="font-bold">Total Price</p>
-                                <p class="font-bold">BDT: <span id="total">0</span></p>
+                                <p class="font-bold">BDT: <span id="total">0</span> Tk</p>
                             </div>
                             <div id="displayDiscount">
 
@@ -295,19 +289,19 @@
                             </div>
                             <div class="flex justify-between py-4">
                                 <p class="font-bold">Grand Total:</p>
-                                <p class="font-bold">BDT: <span>0</span></p>
+                                <p class="font-bold">BDT: <span id="grandTo">0</span> Tk</p>
                             </div>
 
                         </div>
 
                         <div>
                             <div>
-                                <h1 class="font-bold">Passenger Name*</h1>
-                                <input type="text" name="" id="" placeholder="Enter your name" class="border rounded-md p-3 w-full mb-3">
+                                <h1 class="font-bold" >Passenger Name*</h1>
+                                <input required type="text" name="" id="" placeholder="Enter your name" class="border rounded-md p-3 w-full mb-3">
                             </div>
                             <div>
                                 <h1 class="font-bold">Phone Number*</h1>
-                                <input type="text" name="" id="" placeholder="Enter your phone number" class="border rounded-md p-3 w-full mb-3">
+                                <input required type="number" name="" id="phoneNumber" placeholder="Enter your phone number" class="border rounded-md p-3 w-full mb-3">
                             </div>
                             <div>
                                 <h1 class="font-bold">Email ID</h1>
@@ -315,7 +309,7 @@
                             </div>
                             <br>
                             <div>
-                                <button class="text-green-50  border-2 bg-green-500 w-full p-3 rounded-xl font-bold">Next</button>
+                                <button id="submitBtn" class="text-green-50  border-2 bg-green-500 w-full p-3 rounded-xl font-bold" disabled>Next</button>
                             </div>
                             <div class="flex justify-around mt-4">
                                 <p class="underline">Terms and Conditions</p>
@@ -333,7 +327,7 @@
         </section>
     </main>
     
-        <footer class=" p-10 bg-[#030712] text-white mt-5">
+        <footer id="footer" class=" p-10 bg-[#030712] text-white mt-5">
             <div class="w-[1170px] m-auto">
                 <div class="flex justify-between">
                     <div class="space-y-3">
@@ -364,7 +358,20 @@
 
 
 
-
+    <section id="modals" class="flex hidden w-[100%] justify-center m-auto items-center h-[100vh]">
+        <div class=" flex flex-col max-w-[450px] space-y-4 border p-5">
+            <img src="./images/success.png" alt="" class="w-10 m-auto lg:w-[70px]">
+            <h3 class="text-center text-3xl">Success</h3>
+            <h6 class="text-center">Thank you for Booking Our Bus Seats.We are working hard to find the best service and deals for you.</h6>
+            <p class="text-center">Shortly you will find a confirmation in your email.</p>
+            <div >
+                <form action="" class="flex">
+                    <input id="continue" class="text-center w-[100px] mx-auto border bg-green-600 text-white p-3 rounded-lg"  type="submit" value="Continue">
+                </form>
+            
+            </div> 
+        </div>
+    </section>
 
 
 
