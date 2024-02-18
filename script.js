@@ -1,7 +1,3 @@
-console.log("Connected");
-
-
-
 const allSeat = document.getElementById('busSeat').childNodes;
 let availableSeat = 40;
 let increase = 0;
@@ -15,7 +11,6 @@ for(let seat of allSeat) {
                 seat.classList.add('clicked');
                 availableSeat--;
                 remains.innerText = availableSeat;
-
                 event.target.style.backgroundColor = 'green';
                 event.target.style.color = 'white';
 
@@ -40,11 +35,6 @@ for(let seat of allSeat) {
                dov.appendChild(p3)
                displaySit.appendChild(dov);
                
-                
-
-
-
-
                 if(increase === 4) {
                     document.getElementById('applyBtn').removeAttribute('disabled');
                 } else {
@@ -73,14 +63,11 @@ document.getElementById('applyBtn').addEventListener('click', function() {
 
     
 if(inputValue.toUpperCase() === "NEW15") {
-    
-    
         discount = total * 15/100;
         const displayDisc = document.getElementById('displayDiscount');
         const p = document.createElement('p');
         p.innerText = `Your discount is: ${discount}`;
         displayDisc.appendChild(p);
-        console.log("15")
         document.getElementById('couponArea').classList.add('hidden');
 
         const grandTotalAmount = document.getElementById('grandTo');
