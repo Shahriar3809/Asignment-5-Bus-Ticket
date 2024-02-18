@@ -135,4 +135,22 @@ document.getElementById('submitBtn').addEventListener ('click', function () {
     document.getElementById('main').classList.add('hidden');
     document.getElementById('footer').classList.add('hidden');
     document.getElementById('modals').classList.remove('hidden');
+    
+})
+
+document.getElementById('continue').addEventListener ('click', function () {
+    document.getElementById('header').classList.remove('hidden');
+    document.getElementById('main').classList.remove('hidden');
+    document.getElementById('footer').classList.remove('hidden');
+    document.getElementById('modals').classList.add('hidden');
+
+    const allSeat = document.getElementById('busSeat').childNodes;
+    const common = document.getElementsByClassName('common');
+    allSeat.forEach(function (common) {
+        common.classList.remove('clicked')
+    })
+    availableSeat = 40;
+    increase = 0;
+    total = 0;
+   
 })
