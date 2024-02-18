@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e3a0f6a18e.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <title>P-Ticket</title>
 </head>
 <body>
@@ -42,7 +42,7 @@
         <div class="banner flex justify-center items-center gap-5 flex-col bg-[url('./images/banner.png')] bg-cover object-cover bg-no-repeat h-[500px] rounded-[30px] text-white">
             <h1 class="text-6xl text-center font-bold leading-relaxed text-white">End-to-End Travel with <br>  <span class="text-green-500">P Paribahan</span></h1>
             <p class="text-center w-[500px]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
-            <button class="btn btn-success text-center w-30 bg-green-500 ">Buy Tickets</button>
+            <button class="btn btn-success text-center w-30 bg-green-500 "><a href="#seat">Buy Tickets</a></button>
         </div>
 
 
@@ -140,7 +140,7 @@
                                     <p>Coach-009-WEB ! AC_Business</p>
                                 </div>
                             </div>
-                            <a class="btn text-green-500 border-green-200  border-2 bg-green-100"> <img src="./images/seat-green.png" alt=""> 40 Seats Left </i></a>
+                            <a class="btn text-green-500 border-green-200  border-2 bg-green-100"> <img src="./images/seat-green.png" alt=""> <span id="availableSeat">40</span> Seats Left </i></a>
                         </div>
                         <div class="flex flex-col gap-4 bg-gray-100 rounded-2xl p-5 mt-8">
                             <div class="flex justify-between">
@@ -174,7 +174,7 @@
 
 
 
-                <div class="flex mt-16 gap-2">
+                <div id="seat" class="flex mt-16 gap-2">
                     <div class="bg-white w-[60%] p-5  rounded-xl">
                         <div>
                             <h2 class="font-bold text-xl">Select Your Seat</h2>
@@ -199,7 +199,7 @@
                                 <img src="./images/wheel.svg" alt="" class="p-3 px-9 mr-[8%]">
                             </div>
                             <br>
-                            <div class="flex gap-5 justify-center items-center">
+                            <div  class="flex gap-5 justify-center items-center">
                                 <div class="grid grid-cols-1 gap-5">
                                     <p class="p-3 px-6">A</p>
                                     <p class="p-3 px-6">B</p>
@@ -212,7 +212,7 @@
                                     <p class="p-3 px-6">I</p>
                                     <p class="p-3 px-6">J</p>
                                 </div>
-                                <div class="grid grid-cols-4 gap-5 j9stify-center items-center">
+                                <div id="busSeat" class="grid grid-cols-4 gap-5 j9stify-center items-center">
                                     <p id="A1" class="p-3 border px-9 cursor-pointer">A1</p>
                                     <p id="A2" class="p-3 border px-9 cursor-pointer">A2</p>
                                     <p id="A3" class="p-3 border px-9 cursor-pointer">A3</p>
@@ -265,7 +265,7 @@
                         <div class="bg-gray-100 p-3 rounded-2xl mt-5">
                             
                             <div class="flex justify-between font-bold">
-                                    <p>Seat <span>0</span> </p>
+                                    <p>Seat <span id="incresed" class="bg-green-500 text-white p-1">0</span> </p>
                                     <p>Class</p>
                                     <p>Price</p>
                             </div>
@@ -273,22 +273,25 @@
                                 <div class="flex justify-between">
                                     <p>C2</p>
                                     <p>Economy</p>
-                                    <p>1500</p>
+                                    <p>550</p>
                                 </div>
                                 <div class="flex justify-between">
                                     <p>C2</p>
                                     <p>Economy</p>
-                                    <p>1500</p>
+                                    <p>550</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="flex justify-between my-2">
                                 <p class="font-bold">Total Price</p>
-                                <p class="font-bold">BDT: <span>0</span></p>
+                                <p class="font-bold">BDT: <span id="total">0</span></p>
                             </div>
-                            <div class="flex justify-center">
-                                <input type="text" class="p-3 w-[70%] rounded-l-xl border">
-                                <button class="bg-green-500 w-[30%] rounded-xl text-white font-bold">Apply</button>
+                            <div id="displayDiscount">
+
+                            </div>
+                            <div class="flex justify-center" id='couponArea'>
+                                <input type="text" class="p-3 w-[70%] rounded-l-xl border" id="couponField">
+                                <button id="applyBtn" class=" bg-green-500 w-[30%] rounded-xl text-white font-bold" disabled >Apply</button>
                             </div>
                             <div class="flex justify-between py-4">
                                 <p class="font-bold">Grand Total:</p>
