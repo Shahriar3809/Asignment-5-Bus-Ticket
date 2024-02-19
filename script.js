@@ -41,7 +41,7 @@ for(let seat of allSeat) {
                     document.getElementById('applyBtn').setAttribute('disabled', true);
                 }
             } else {
-                alert("You can't Buy More Than 4 Tickets");
+                alert("Error! Select another one, or your limit has been crossed.");
             }
             total = increase * seatPrice;
             const totalAmount = document.getElementById('total');
@@ -59,7 +59,10 @@ for(let seat of allSeat) {
 
 document.getElementById('applyBtn').addEventListener('click', function() {
     const inputValue = document.getElementById('couponField').value;
+    const splitInput = inputValue.split(' ');
+    const splitConcat = splitInput.join('');
     let discount = 0;
+
 
     
 if(inputValue.toUpperCase() === "NEW15") {
@@ -78,7 +81,7 @@ if(inputValue.toUpperCase() === "NEW15") {
 
 
     
-} else  if(inputValue.toUpperCase() === "COUPLE20"){
+} else  if(splitConcat.toUpperCase() === "COUPLE20"){
     
         discount = total * 20/100;
         const displayDisc = document.getElementById('displayDiscount');
@@ -136,6 +139,8 @@ document.getElementById('continue').addEventListener ('click', function () {
     allSeat.forEach(function (common) {
         common.classList.remove('clicked')
     })
+
+
     availableSeat = 40;
     increase = 0;
     total = 0;
